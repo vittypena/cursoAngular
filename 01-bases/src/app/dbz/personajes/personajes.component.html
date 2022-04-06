@@ -1,0 +1,9 @@
+<h3>Personajes</h3>
+        <hr>
+        <ul>
+            <li>Krillin - 700</li>
+            <!--Para pasar la información del personajes (que existe en el componente padre MainPageComponent)-->
+            <li *ngFor="let personaje of personajes">
+                {{personaje.nombre}} - {{personaje.poder | number}}
+            </li>
+</ul>
