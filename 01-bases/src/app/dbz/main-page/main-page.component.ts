@@ -12,7 +12,8 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  agregar(): void{    
+  //Evento de un form con ngSubmit
+  agregar(){    
     console.log('Hey');
   }
 }
