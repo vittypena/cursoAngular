@@ -1,0 +1,62 @@
+<h2>Template: Básicos</h2>
+
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="guardar()" #miFormulario="ngForm" autocomplete="off">
+            <!-- Campo de producto-->
+            <div class="mb-3 row">
+                <label for="Producto" class="col-sm-3 col-form-label">Producto</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" placeholder="Nombre del producto" name="producto" [ngModel] = "initForm.producto"
+                        required minlength="3">
+                    <span class="form-text text-danger" 
+                    *ngIf="miFormulario.controls['producto']?.invalid 
+                    && miFormulario.controls['producto']?.touched">Debe de ser de 3 letras</span>
+                </div>
+            </div>
+
+            <!-- Campo de Precio-->
+            <div class="mb-3 row">
+                <label for="Producto" class="col-sm-3 col-form-label">Precio</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="Precio del producto" name="precio" [ngModel] = "initForm.precio"
+                        required>
+                        <span class="form-text text-danger" 
+                        *ngIf="precioValido()">Debe de ser mayor o igual a 0</span>
+                </div>
+            </div>
+
+            <!-- Campo de Existencias-->
+            <div class="mb-3 row">
+                <label for="Producto" class="col-sm-3 col-form-label">Existencias</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="Existencias del producto" name="existencias"
+                    [ngModel] = "initForm.existencias">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary float-end" [disabled]="miFormulario.invalid">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="clo">
+        <span>Valid</span>
+        <pre>{{ miFormulario.valid }}</pre>
+
+        <span>Pristine</span>
+        <!-- Pristine significa que no se han cambiado ninguno de los valores con los que se presento el formulario-->
+        <pre>{{ miFormulario.pristine }}</pre>
+
+        <span>Touched</span>
+        <pre>{{ miFormulario.touched }}</pre>
+
+        <span>Value</span>
+        <pre>{{ miFormulario.value | json }}</pre>
+    </div>
+</div>
