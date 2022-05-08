@@ -11,7 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Cambiar el locale de la app
-import localeEs from '@angular/common/locales/es';  //despues de locales/ control intro y vemos todos
+import localeEs from '@angular/common/locales/es';  //despues de locales/ ctrl space y vemos todos
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs)
